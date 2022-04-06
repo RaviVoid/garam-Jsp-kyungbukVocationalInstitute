@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=ko>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,14 @@
 	<div class="jointit w100 tC"><b>약관동의</b></div>
 	<div class="pd16">
 	<!-- 컨텐츠시작 -->
+			<div>
+				<div class="tC">
+					<label>
+						<input type="checkbox" onclick="chkAuto(this);" /> 전체동의
+					</label>
+				</div>
+			</div>
+			
 			<div class="joinbox">
 				<label for="agree1">서비스 이용약관 동의</label>
 				<input type="checkbox" id="agree1" name="" value="" checked="checked">
@@ -47,6 +55,7 @@
 </div>
 <!-- 자바스크립트 코드 -->
 <script>
+
 function join02(){
 	let agree1 = document.getElementById("agree1");
 	let agree2 = document.getElementById("agree2");
@@ -70,6 +79,20 @@ function join02(){
 	}
 	location.href="join02.html";
 	//location.replace("join02.html");
+}
+
+
+function chkAuto(t){
+	if(t.checked){
+		agree1.checked = true;
+		agree2.checked = true;
+		agree3.checked = true;
+	} else {
+		agree1.checked = false;
+		agree2.checked = false;
+		agree3.checked = false;
+	}
+	console.log("전체선택을 클릭했어요." + t.checked);
 }
 </script>
 </body>
